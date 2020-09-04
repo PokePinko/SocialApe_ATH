@@ -17,10 +17,10 @@ exports.validateSignupData = (data) => {
     errors.email = "Must be a valid email address";
   }
 
-  if (isEmpty(newUser.password)) errors.password = "Must not be empty";
-  if (newUser.password !== newUser.confirmPassword)
+  if (isEmpty(data.password)) errors.password = "Must not be empty";
+  if (data.password !== data.confirmPassword)
     errors.confirmPassword = "Passwords must match";
-  if (isEmpty(newUser.handle)) errors.handle = "Must not be empty";
+  if (isEmpty(data.handle)) errors.handle = "Must not be empty";
 
   //if (Object.keys(errors).length > 0) return res.status(400).json(errors);
 
