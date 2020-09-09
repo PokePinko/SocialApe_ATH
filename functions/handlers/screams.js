@@ -12,6 +12,7 @@ exports.getAllScreams = (req, res) => {
           body: doc.data().body,
           userHandle: doc.data().userHandle,
           createdAt: doc.data().createdAt,
+          userImage: doc.data().userImage,
         });
       });
       return res.json(screams);
@@ -23,6 +24,8 @@ exports.postOneScream = (req, res) => {
   const newScream = {
     body: req.body.body,
     userHandle: req.user.handle,
+    userImage: req.user.imageUrl,
+    likeCount: 0,
     createdAt: new Date().toISOString(),
   };
   db.collection("screams")
@@ -60,7 +63,7 @@ exports.getScream = (req, res) => {
 
 exports.commentOnScream = (req, res) => {
   if (req.body.body.trim() === "")
-    return res.status(400).json({ error: "Must not be emtpy" });
+    return res.status(400).json({ comment: "Must not be emtpy" });
 
   const newComment = {
     body: req.body.body,
