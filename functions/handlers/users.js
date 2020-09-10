@@ -87,7 +87,7 @@ exports.login = (req, res) => {
       } else {
         return res
           .status(500)
-          .json({ general: "Something went wrong, please try again" });
+          .json({ general: "Wrong credentials, please try again" });
       }
     });
 };
