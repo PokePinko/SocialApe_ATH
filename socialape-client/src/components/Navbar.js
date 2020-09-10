@@ -9,7 +9,7 @@ class Navbar extends Component {
   render() {
     return (
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar className="nav-container">
           <Button color="inherit" component={Link} to="/login">
             Login
           </Button>
