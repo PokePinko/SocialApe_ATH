@@ -27,7 +27,9 @@ class home extends Component {
         <Grid item sm={8} xs={12}>
           {recentScreamsMarkup}
         </Grid>
-        <Grid item sm={4} xs={12}></Grid>
+        <Grid item sm={4} xs={12}>
+          <Profile />
+        </Grid>
       </Grid>
     );
   }

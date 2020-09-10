@@ -5,6 +5,7 @@ import {
   SET_ERRORS,
   CLEAR_ERRORS,
   SET_UNAUTHENTICATED,
+  LOADING_USER,
 } from "../types";
 import axios from "axios";
 export const loginUser = (userData, history) => (dispatch) => {
@@ -43,6 +44,7 @@ export const logoutUser = () => (dispatch) => {
   dispatch({ type: SET_UNAUTHENTICATED });
 };
 export const getUserData = () => (dispatch) => {
+  dispatch({ type: LOADING_USER });
   axios
     .get("/user")
     .then((res) => {
