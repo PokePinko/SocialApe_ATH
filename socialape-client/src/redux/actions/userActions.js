@@ -8,6 +8,7 @@ import {
   LOADING_USER,
 } from "../types";
 import axios from "axios";
+
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
