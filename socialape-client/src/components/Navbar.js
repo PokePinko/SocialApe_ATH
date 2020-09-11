@@ -9,7 +9,7 @@ import MyButton from "../util/MyButton";
 import AddIcon from "@material-ui/icons/Add";
 import HomeIcon from "@material-ui/icons/Home";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-
+import PostScream from "./PostScream";
 class Navbar extends Component {
   render() {
     const { authenticated } = this.props;
@@ -19,9 +19,7 @@ class Navbar extends Component {
           {authenticated ? (
             <Fragment>
               {" "}
-              <MyButton tip="Post a scream">
-                <AddIcon color="primary" />
-              </MyButton>
+              <PostScream />
               <MyButton tip="Home">
                 <Link to="/">
                   <HomeIcon color="primary" />
