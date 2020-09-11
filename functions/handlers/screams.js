@@ -65,6 +65,10 @@ exports.getScream = (req, res) => {
       screamData.comments = [];
       data.forEach((doc) => screamData.comments.push(doc.data()));
       return res.json(screamData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Something went wrong" });
     });
 };
 

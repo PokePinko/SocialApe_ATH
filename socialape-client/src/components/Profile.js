@@ -116,7 +116,7 @@ class Profile extends Component {
             <div className="profile-details">
               <MuiLink
                 component={Link}
-                to={`/users${handle}`}
+                to={`/users/${handle}`}
                 color="primary"
                 variant="h5"
               >

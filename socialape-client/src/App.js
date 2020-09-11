@@ -16,6 +16,7 @@ import axios from "axios";
 //Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import user from "./pages/user";
 const theme = createMuiTheme(themeFile);
 
 const token = localStorage.FBIdToken;
@@ -44,6 +45,7 @@ function App() {
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
+                <Route exact path="/users/:handle" component={user} />
               </Switch>
             </div>
           </Router>
