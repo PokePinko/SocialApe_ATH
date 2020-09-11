@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import { likeScream, unlikeScream } from "../redux/actions/dataActions";
 import DeleteScream from "./DeleteScream";
 import MyButton from "../util/MyButton";
-
+import ScreamDialog from "./ScreamDialog";
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";

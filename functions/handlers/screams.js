@@ -23,6 +23,9 @@ exports.getAllScreams = (req, res) => {
 };
 
 exports.postOneScream = (req, res) => {
+  if (req.body.body.trim() === "") {
+    return res.status(400).json({ body: "Body must not be empty" });
+  }
   const newScream = {
     body: req.body.body,
     userHandle: req.user.handle,
@@ -33,7 +36,9 @@ exports.postOneScream = (req, res) => {
   db.collection("screams")
     .add(newScream)
     .then((doc) => {
-      res.json({ message: `document ${doc.id} created successfully` });
+      const resScream = newScream;
+      resScream.screamId = doc.id;
+      res.json(resScream);
     })
     .catch((err) => {
       res.status(500).json({ error: "something went wrong" });
